@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Panel Solar</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Panel Izquierdo (Principal) -->
+        <div class="panel-izquierdo">
+            <h2 class="titulo-dash">Solar Energy<br>Dashboard</h2>
+            <div class="potencia-box">
+                <h1 id="valor-potencia">0.00</h1>
+                <p>mW (Potencia Actual)</p>
+            </div>
+            <p id="ultima-act">Conectando a Firebase...</p>
+        </div>
+
+        <!-- Panel Derecho (Métricas y Gráfica) -->
+        <div class="panel-derecho">
+            <!-- Tarjetas de estado -->
+            <div class="status-cards">
+                <div class="card">
+                    <p class="card-label">Voltaje del Sistema</p>
+                    <h3 id="valor-voltaje">0.00 V</h3>
+                </div>
+                <div class="card">
+                    <p class="card-label">Corriente (Flujo)</p>
+                    <h3 id="valor-corriente">0.00 mA</h3>
+                </div>
+            </div>
+
+            <!-- Gráfica estilo "Energy Balance" -->
+            <div class="chart-card">
+                <p class="chart-title">Balance de Energía en Tiempo Real</p>
+                <div class="chart-container">
+                    <canvas id="graficaPrincipal"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
